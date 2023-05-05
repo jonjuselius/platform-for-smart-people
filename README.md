@@ -1,3 +1,6 @@
+# Platform for Smart People: Augmented Reality Web UI for Personalization
+Bachelor project at Stockholm University spring 2023.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
