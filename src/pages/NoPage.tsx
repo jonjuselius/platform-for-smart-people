@@ -3,7 +3,7 @@ import React from 'react';
 function NoPage() {
     return (
         <>
-            <header>NoPage</header>
+            <h1>NoPage</h1>
         </>
     );
 }

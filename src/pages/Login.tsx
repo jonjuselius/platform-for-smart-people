@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from "components/LoginForm";
-import {Container, Row, Col, Button} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 
 function Login() {
 	return (
@@ -8,7 +8,7 @@ function Login() {
 			<Container>
 				<Row className="align-items-center justify-content-center">
 					<Col md={6}>
-						<header className={"pb-3 text-center"}>Logga in</header>
+						<h1 className={"pb-3 text-center"}>Logga in</h1>
 						<LoginForm/>
 					</Col>
 				</Row>

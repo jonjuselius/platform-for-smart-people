@@ -4,7 +4,7 @@ import Participants from "pages/Participants";
 function Home() {
     return (
         <>
-            <header>Home</header>
+            {/*<h1>Home</h1>*/}
         </>
     );
 }

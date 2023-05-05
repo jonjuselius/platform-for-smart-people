@@ -7,14 +7,18 @@ $font-monospace: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monosp
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  background-color: $light;
-  //background-color: $background-light;
+  background-color: $background-light;
   margin: 0;
   font-family: $font-sansserif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-  @extend .display-5;
+h1 {
+  @extend .display-6;
+}
+
+.Pictogram {
+  width: 5em;
+  height: 5em;
 }

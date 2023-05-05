@@ -3,7 +3,7 @@ import React from 'react';
 function Participants() {
     return (
         <>
-            <header>Participants</header>
+            <h1>Participants</h1>
         </>
     );
 }
