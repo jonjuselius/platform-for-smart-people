@@ -5,10 +5,9 @@ import ParticipantList from "components/ParticipantList";
 
 function Participants() {
 	return (
-		<>
-			{/*<h1 className={"text-center mt-3"}>Deltagare</h1>*/}
+		<Container className={"my-5"}>
 			<ParticipantList/>
-		</>
+		</Container>
 	);
 }
 

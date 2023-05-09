@@ -1,12 +1,12 @@
 import React from 'react';
 import ActivitiesList from "components/ActivitiesList";
+import { Container } from 'react-bootstrap';
 
 function Activities() {
 	return (
-		<>
-			{/*<h1 className={"text-center mt-3"}>Aktiviteter</h1>*/}
+		<Container className={"my-5"}>
 			<ActivitiesList/>
-		</>
+		</Container>
 	);
 }
 

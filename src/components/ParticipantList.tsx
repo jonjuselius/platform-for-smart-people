@@ -14,7 +14,7 @@ import Sybil from "../assets/img/persona/sybil.png";
 
 export default function ParticipantList() {
 	return (
-		<Container className={"my-5 d-flex flex-row justify-content-evenly align-items-start gap-0 flex-wrap"}>
+		<Container className={"d-flex flex-row justify-content-evenly align-items-start gap-5 flex-wrap"}>
 			<Link to={"../userprofile"}>
 				<Image src={Anna} className={"persona"}/>
 			</Link>

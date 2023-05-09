@@ -1,24 +1,24 @@
 import React from 'react';
 import {Accordion, Col, Container, Stack} from 'react-bootstrap';
 import {Link} from "react-router-dom";
-import Anna from "assets/img/persona/anna.png";
+import Baka from "assets/img/pictogram/baka.png";
 import Image from "react-bootstrap/Image";
 import {Calendar4Week} from 'react-bootstrap-icons';
 import {Camera} from 'react-bootstrap-icons';
 import QR from "assets/img/qr.png";
 import ParticipantList from "../components/ParticipantList";
 
-function UserProfile() {
+function ActivityProfile() {
 	return (
 		<div className={"d-sm-flex flex-row gap-3"}>
 			<div className="order-1 p-2 my-3">
-				<Image src={Anna} className={"persona-profile"} roundedCircle/>
+				<Image src={Baka} className={"pictogram-profile"} roundedCircle/>
 			</div>
 			<Col className="order-2 d-flex flex-column gap-3 my-3 mx-3">
 				<div className={"d-flex flex-row justify-content-between align-items-end"}>
 					<div>
-						<h1 className={"display-2 lh-1"}>Anna</h1>
-						<h2 className={"display-6 fw-lighter lh-1"}>Grupp 2</h2>
+						<h1 className={"display-2 lh-1"}>Baka</h1>
+						<h2 className={"display-6 fw-lighter lh-1"}>Stående aktivitet</h2>
 					</div>
 
 					<Stack direction="horizontal">
@@ -72,9 +72,7 @@ function UserProfile() {
 				</Accordion>
 
 				<Stack direction="horizontal" gap={5} className={"mx-3 my-4"}>
-					<Link to={"../calendar"}>
-						<Calendar4Week size={48}/>
-					</Link>
+					<Calendar4Week size={48}/>
 					<Camera size={48}/>
 				</Stack>
 			</Col>
@@ -82,4 +80,4 @@ function UserProfile() {
 	);
 }
 
-export default UserProfile;
+export default ActivityProfile;

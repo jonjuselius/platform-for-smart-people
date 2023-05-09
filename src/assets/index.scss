@@ -44,19 +44,32 @@ h1 {
 .friday {background-color: $friday;}
 
 .box {
-  width: 200px;
+  width: 100px;
   height: 100px;
 }
 
-.persona, .pictogram {
-  width: 100px;
-  height: 100px;
-  //height: 100%;
-  //width: 100%;
-  object-fit: contain;
+.persona {
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
 }
 
 .persona-profile {
-  width: 25%;
-  height: auto;
+  width: 20em;
+  height: 20em;
+  object-fit: cover;
+  //width: 25%;
+  //height: auto;
 }
+
+.pictogram {
+  width: 8em;
+  height: 8em;
+  object-fit: contain;
+}
+
+.pictogram-profile {
+  //width: 15em;
+  //height: auto;
+}
+

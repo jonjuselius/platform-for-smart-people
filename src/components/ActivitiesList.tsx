@@ -17,11 +17,15 @@ import Sälja from 'assets/img/pictogram/sälja.png'
 import Virka from 'assets/img/pictogram/virka.png'
 import Väva from 'assets/img/pictogram/väva.png'
 import {Container} from "react-bootstrap";
+import {Link} from "react-router-dom";
+import Anna from "../assets/img/persona/anna.png";
 
 export default function ActivitiesList() {
 	return (
-		<Container className={"my-5 d-flex flex-row justify-content-evenly align-items-start gap-5 flex-wrap"}>
-			<Image src={Baka} className={"pictogram"} roundedCircle={true}/>
+		<Container className={"d-flex flex-row justify-content-evenly align-items-start gap-5 flex-wrap"}>
+			<Link to={"../activityprofile"}>
+				<Image src={Baka} className={"pictogram"} roundedCircle={true}/>
+			</Link>
 			<Image src={Diska} className={"pictogram"} roundedCircle={true}/>
 			<Image src={Fika} className={"pictogram"} roundedCircle={true}/>
 			<Image src={Måla} className={"pictogram"} roundedCircle={true}/>

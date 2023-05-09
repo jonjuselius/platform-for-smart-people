@@ -9,6 +9,7 @@ import NoPage from "pages/NoPage";
 import Login from 'pages/Login';
 import UserProfile from 'pages/UserProfile';
 import Calendar from 'pages/Calendar';
+import ActivityProfile from "./pages/ActivityProfile";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 					<Route path="participants" element={<Participants />} />
 					<Route path="activities" element={<Activities />} />
 					<Route path="userprofile" element={<UserProfile />} />
+					<Route path="activityprofile" element={<ActivityProfile />} />
 					<Route path="calendar" element={<Calendar />} />
 					<Route path="login" element={<Login />} />
 					<Route path="*" element={<NoPage />} />
