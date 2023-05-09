@@ -15,7 +15,7 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route element={<Layout />}>
-					<Route index element={<Home />} />
+					<Route index element={<Calendar />} />
 					<Route path="participants" element={<Participants />} />
 					<Route path="activities" element={<Activities />} />
 					<Route path="userprofile" element={<UserProfile />} />

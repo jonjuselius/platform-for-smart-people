@@ -8,7 +8,6 @@ import Calendar from 'pages/Calendar';
 function Layout() {
 	return <>
 		<Navigation/>
-		<Calendar/>
 		<Outlet/>
 	</>
 }
