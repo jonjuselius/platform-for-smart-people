@@ -29,7 +29,7 @@ function ActivityProfile() {
 				<Accordion defaultActiveKey="0">
 					<Accordion.Item eventKey="0">
 						<Accordion.Header>Anteckningar</Accordion.Header>
-						<Accordion.Body>
+						<Accordion.Body className={"d-flex flex-column gap-3"}>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 							minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -41,7 +41,7 @@ function ActivityProfile() {
 					</Accordion.Item>
 					<Accordion.Item eventKey="1">
 						<Accordion.Header>Datum och tid</Accordion.Header>
-						<Accordion.Body>
+						<Accordion.Body className={"d-flex flex-column gap-3"}>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 							minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -49,11 +49,12 @@ function ActivityProfile() {
 							reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 							pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 							culpa qui officia deserunt mollit anim id est laborum.
+							<Link to={"../calendar"}>Öppna kalender</Link>
 						</Accordion.Body>
 					</Accordion.Item>
 					<Accordion.Item eventKey="2">
 						<Accordion.Header>Kommande tillfällen</Accordion.Header>
-						<Accordion.Body>
+						<Accordion.Body className={"d-flex flex-column gap-3"}>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 							minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -61,6 +62,7 @@ function ActivityProfile() {
 							reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 							pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 							culpa qui officia deserunt mollit anim id est laborum.
+							<Link to={"../calendar"}>Öppna kalender</Link>
 						</Accordion.Body>
 					</Accordion.Item>
 					<Accordion.Item eventKey="3">
