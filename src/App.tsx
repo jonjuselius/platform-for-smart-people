@@ -14,7 +14,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route element={<Layout />}>
+				<Route path="/~joju4839/" element={<Layout />}>
 					<Route index element={<Calendar />} />
 					<Route path="participants" element={<Participants />} />
 					<Route path="activities" element={<Activities />} />

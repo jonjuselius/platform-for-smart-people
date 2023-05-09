@@ -1,6 +1,7 @@
 import src from "assets/Pictogram.png";
 import React from "react";
 import {Col, Container, Row, Image} from "react-bootstrap";
+import empty from 'assets/img/empty.png'
 
 export default function CalendarDayView() {
 	return (
@@ -12,37 +13,37 @@ export default function CalendarDayView() {
 			<Row>
 				<Col xs={5} md={3} xl={3} className={"bg-light p-3 border-bottom border-end text-center h6 m-0 fw-light"}>09:00-10:00</Col>
 				<Col className={"bg-light border-bottom border-end"}>
-					<Image height={100} src="img/empty.png"/>
+					<Image height={100} src={empty}/>
 				</Col>
 			</Row>
 			<Row>
 				<Col xs={5} md={3} xl={3} className={"bg-light p-3 border-bottom border-end text-center h6 m-0 fw-light"}>10:00-11:00</Col>
 				<Col className={"bg-light border-bottom border-end"}>
-					<Image height={100} src="img/empty.png"/>
+					<Image height={100} src={empty}/>
 				</Col>
 			</Row>
 			<Row>
 				<Col xs={5} md={3} xl={3} className={"bg-light p-3 border-bottom border-end text-center h6 m-0 fw-light"}>11:00-12:00</Col>
 				<Col className={"bg-light border-bottom border-end"}>
-					<Image height={100} src="img/empty.png"/>
+					<Image height={100} src={empty}/>
 				</Col>
 			</Row>
 			<Row>
 				<Col xs={5} md={3} xl={3} className={"bg-light p-3 border-bottom border-end text-center h6 m-0 fw-light"}>12:00-13:00</Col>
 				<Col className={"bg-light border-bottom border-end"}>
-					<Image height={100} src="img/empty.png"/>
+					<Image height={100} src={empty}/>
 				</Col>
 			</Row>
 			<Row>
 				<Col xs={5} md={3} xl={3} className={"bg-light p-3 border-bottom border-end text-center h6 m-0 fw-light"}>13:00-14:00</Col>
 				<Col className={"bg-light border-bottom border-end"}>
-					<Image height={100} src="img/empty.png"/>
+					<Image height={100} src={empty}/>
 				</Col>
 			</Row>
 			<Row>
 				<Col xs={5} md={3} xl={3} className={"bg-light p-3 border-bottom border-end text-center h6 m-0 fw-light"}>14:00-15:00</Col>
 				<Col className={"bg-light border-bottom border-end"}>
-					<Image height={100} src="img/empty.png"/>
+					<Image height={100} src={empty}/>
 				</Col>
 			</Row>
 		</Container>

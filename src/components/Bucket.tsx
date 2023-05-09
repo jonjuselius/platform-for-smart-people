@@ -3,6 +3,12 @@ import {useDrop, XYCoord} from "react-dnd";
 import {Box} from "./Box";
 import {Image} from "react-bootstrap";
 import update from 'immutability-helper'
+import baka from 'assets/img/baka.png'
+import diska from 'assets/img/diska.png'
+import fika from 'assets/img/fika.png'
+import måla from 'assets/img/måla.png'
+import sticka from 'assets/img/sticka.png'
+import yoga from 'assets/img/yoga.png'
 
 const bucketStyle: CSSProperties = {
 	width: '100vw',
@@ -33,10 +39,10 @@ export const Bucket: FC<BucketProps> = ({hideSourceOnDrag}) => {
 			source: string
 		}
 	}>({
-		a: {top: 20, right: 16, source: 'img/baka.png'},
-		b: {top: 130, right: 16, source: 'img/diska.png'},
-		c: {top: 240, right: 16, source: 'img/sticka.png'},
-		d: {top: 350, right: 16, source: 'img/måla.png'},
+		a: {top: 20, right: 16, source: baka},
+		b: {top: 130, right: 16, source: diska},
+		c: {top: 240, right: 16, source: sticka},
+		d: {top: 350, right: 16, source: måla},
 	})
 
 	const moveBox = useCallback(

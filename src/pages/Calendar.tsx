@@ -11,7 +11,7 @@ import SaveButton from "components/SaveButton";
 function Calendar() {
 	return (
 		<>
-			<h1 className={"m-3"}>Kalender</h1>
+			<h1 className={"m-3 fw-lighter"}>Kalender</h1>
 
 			<DndProvider backend={HTML5Backend}>
 				<Bucket hideSourceOnDrag={false}/>
