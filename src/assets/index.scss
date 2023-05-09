@@ -17,6 +17,12 @@ $grid-breakpoints: (
         xxl: 1400px
 );
 
+.Figure.Image {
+  height: 100%;
+  width: auto;
+  background: red;
+}
+
 @import "~bootstrap/scss/bootstrap";
 
 body {
@@ -36,3 +42,21 @@ h1 {
 .wednesday {background-color: $wednesday;}
 .thursday {background-color: $thursday;}
 .friday {background-color: $friday;}
+
+.box {
+  width: 200px;
+  height: 100px;
+}
+
+.persona, .pictogram {
+  width: 100px;
+  height: 100px;
+  //height: 100%;
+  //width: 100%;
+  object-fit: contain;
+}
+
+.persona-profile {
+  width: 25%;
+  height: auto;
+}

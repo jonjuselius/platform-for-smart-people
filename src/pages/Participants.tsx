@@ -1,13 +1,15 @@
+/* eslint-disable */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Col, Container, Figure, Row} from 'react-bootstrap';
+import ParticipantList from "components/ParticipantList";
 
 function Participants() {
-    return (
-        <>
-            {/*<h1>Participants</h1>*/}
-            {/*<Link to={"/userprofile"}>User profile</Link>*/}
-        </>
-    );
+	return (
+		<>
+			{/*<h1 className={"text-center mt-3"}>Deltagare</h1>*/}
+			<ParticipantList/>
+		</>
+	);
 }
 
 export default Participants;
