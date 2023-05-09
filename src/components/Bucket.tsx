@@ -72,7 +72,7 @@ export const Bucket: FC<BucketProps> = ({hideSourceOnDrag}) => {
 				const {right, top, source} = boxes[key] as { top: number, right: number, source: string }
 				return (
 					<Box key={key} id={key} right={right} top={top} hideSourceOnDrag={hideSourceOnDrag}>
-						<Image width={75} height={75} alt="Image" src={source}/>
+						<Image width={100} alt="Image" src={source}/>
 					</Box>
 				)
 			})}
