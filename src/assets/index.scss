@@ -1,8 +1,21 @@
 $primary: #002f5f;
 $background-light: #F5F5F7;
 $background-dark: #282c34;
+$monday: #91D14F;
+$tuesday: #1DAEF1;
+$wednesday: #FFFFFF;
+$thursday: #FAA841;
+$friday: #FFFF05;
 $font-sansserif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 $font-monospace: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+);
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -22,3 +35,9 @@ h1 {
   width: 5em;
   height: 5em;
 }
+
+.monday {background-color: $monday;}
+.tuesday {background-color: $tuesday;}
+.wednesday {background-color: $wednesday;}
+.thursday {background-color: $thursday;}
+.friday {background-color: $friday;}
