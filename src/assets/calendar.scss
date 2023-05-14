@@ -1,0 +1,91 @@
+.calendar {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 200;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  filter: drop-shadow(0px 4px 4px #00000025);
+}
+
+.column {
+  width: 16.67%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1px;
+}
+
+.timeslot {
+  background-color: #F5F5F7;
+  width: 100%;
+  height: 6em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  margin: auto;
+  display: inline-block;
+  text-align: left;
+  max-width: 75%;
+}
+
+.label {
+  width: 100%;
+  background-color: #F5F5F7;
+  height: 2.5em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.monday {background-color: #91D14F;}
+.tuesday {background-color: #1DAEF1;}
+.wednesday {background-color: #FFFFFF;}
+.thursday {background-color: #FAA841;}
+.friday {background-color: #FFFF05;}
+
+.rounded-top-left {border-radius: 16px 0 0px 0px;}
+.rounded-top-right {border-radius: 0px 16px 0px 0px;}
+.rounded-bottom-right {border-radius: 0px 0px 16px 0px;}
+.rounded-bottom-left {border-radius: 0px 0px 0px 16px;}
+
+caption {
+  color: #1D1D1F;
+  caption-side: top;
+  font-size: 1.8em;
+  font-weight: 200;
+  text-align: center;
+  padding: 0.5em;
+}
+
+table {
+  width: 100%;
+  //table-layout: fixed;
+  overflow-x: auto;
+}
+
+td {
+  padding: 0.25em 0.75em;
+  border: 1px solid #dddd;
+  font-size: 1.2em;
+  height: 4em;
+  text-align: right;
+  vertical-align: top;
+}
+
+col {
+  background-color: #F5F5F7;
+}
+
+.weekend {
+  //background-color: #F5F5F788;
+  background-color: #ddd4;
+}
+

@@ -9,6 +9,9 @@ import NoPage from "pages/NoPage";
 import Login from 'pages/Login';
 import UserProfile from 'pages/UserProfile';
 import Calendar from 'pages/Calendar';
+import CalendarDay from 'pages/CalendarDay';
+import CalendarWeek from 'pages/CalendarWeek';
+import CalendarMonth from 'pages/CalendarMonth';
 import ActivityProfile from "./pages/ActivityProfile";
 
 function App() {
@@ -22,6 +25,9 @@ function App() {
 					<Route path="userprofile" element={<UserProfile />} />
 					<Route path="activityprofile" element={<ActivityProfile />} />
 					<Route path="calendar" element={<Calendar />} />
+					<Route path="calendarday" element={<CalendarDay />} />
+					<Route path="calendarweek" element={<CalendarWeek />} />
+					<Route path="calendarmonth" element={<CalendarMonth />} />
 					<Route path="login" element={<Login />} />
 					<Route path="*" element={<NoPage />} />
 				</Route>

@@ -5,8 +5,9 @@ import {Bucket} from 'components/Bucket';
 import {DndProvider} from 'react-dnd';
 import {HTML5Backend} from 'react-dnd-html5-backend';
 import {ButtonToolbar} from 'reactstrap';
-import ConfirmModal from "components/ConfirmModal";
+import ModalConfirmSave from "components/ModalConfirmSave";
 import SaveButton from "components/SaveButton";
+import CalendarWeekView from "../components/CalendarWeekView";
 
 function Calendar() {
 	return (

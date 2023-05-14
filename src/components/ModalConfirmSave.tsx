@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function ConfirmModal(props: any) {
+function ModalConfirmSave(props: any) {
 	return (
 		<Modal
 			{...props}
@@ -11,7 +11,7 @@ function ConfirmModal(props: any) {
 		>
 			<Modal.Header closeButton>
 				<Modal.Title id="contained-modal-title-vcenter">
-					Spara ändringar
+					Spara
 				</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>
@@ -21,10 +21,10 @@ function ConfirmModal(props: any) {
 			</Modal.Body>
 			<Modal.Footer>
 				<Button onClick={props.onHide} variant={"secondary"}>Avbryt</Button>
-				<Button onClick={props.onHide} variant={"primary"}>Spara ändringar</Button>
+				<Button onClick={props.onHide} variant={"primary"}>Spara</Button>
 			</Modal.Footer>
 		</Modal>
 	);
 }
 
-export default ConfirmModal;
+export default ModalConfirmSave;
