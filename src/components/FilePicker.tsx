@@ -3,6 +3,10 @@ import React from "react";
 import {Image} from "react-bootstrap";
 
 export default function FilePicker(props: any) {
+	const size = props.size
+	const rounded = props.rounded
+	const roundedCircle = props.roundedCircle
+
 	const [openFileSelector, { filesContent, loading, errors }] = useFilePicker({
 		readAs: "DataURL",
 		accept: "image/*",
@@ -28,7 +32,7 @@ export default function FilePicker(props: any) {
 			{filesContent.map((file, index) => (
 				<div key={index}>
 					<div onClick={() => openFileSelector()}>
-						<Image src={file.content} alt={file.name} style={{width: 100, height: 100, objectFit: "cover", backgroundColor: "transparent", cursor: "pointer"}} rounded={true}/>
+						<Image src={file.content} alt={file.name} style={{width: size, height: size, objectFit: "cover", backgroundColor: "transparent", cursor: "pointer"}} rounded={rounded} roundedCircle={roundedCircle}/>
 					</div>
 				</div>
 			))}

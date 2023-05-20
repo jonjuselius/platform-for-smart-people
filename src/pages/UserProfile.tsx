@@ -1,5 +1,5 @@
 import React from 'react';
-import {Accordion, Button, Col, Container, Form, Stack} from 'react-bootstrap';
+import {Accordion, Button, Col, Container, Form, Row, Stack} from 'react-bootstrap';
 import {Link, useLocation} from "react-router-dom";
 import Anna from "assets/img/persona/anna.png";
 import Image from "react-bootstrap/Image";
@@ -11,21 +11,17 @@ import ActivitiesList from "../components/ActivitiesList";
 import Persona, {anna, personas, sybil} from '../components/Persona';
 import FilePicker from "../components/FilePicker";
 import Item, {diskborste, items} from "../components/Item";
-
-// import { useLocation } from 'react-router-dom';
+import ButtonRemoveParticipant from "../components/ButtonRemoveParticipant";
 
 function UserProfile() {
-	// let location = useLocation();
-	// const {currentPersona} = location.state;
-	// const {persona} = props.location;
-	// const persona = anna;
 	const {state} = useLocation();
-	let persona = state === undefined ? anna : state;
+	const persona = state === undefined ? anna : state;
 
 	return (
 		<div className={"d-sm-flex flex-row gap-3"}>
 			<div className="order-1 p-2 my-3">
-				<Image src={persona.img} alt={persona.name} className={"persona-profile"} roundedCircle/>
+				<FilePicker element={<Persona persona={persona} size={200} roundedCircle={true}/>} size={200} roundedCircle={true}/>
+				{/*<Image src={persona.img} alt={persona.name} className={"persona-profile"} roundedCircle/>*/}
 			</div>
 			<Col className="order-2 d-flex flex-column gap-3 my-3 mx-3">
 				<div className={"d-flex flex-row justify-content-between align-items-end"}>
@@ -39,7 +35,7 @@ function UserProfile() {
 					</Stack>
 				</div>
 
-				<Accordion defaultActiveKey="0">
+				<Accordion defaultActiveKey={["0"]} alwaysOpen>
 					<Accordion.Item eventKey="0">
 						<Accordion.Header>Anteckningar</Accordion.Header>
 						<Accordion.Body className={"d-flex flex-column gap-3"}>
@@ -58,8 +54,9 @@ function UserProfile() {
 								</div>
 							</section>
 							<section className={"d-flex flex-column flex-wrap gap-2 align-items-start"}>
-								<Button variant={"primary"}>Öppna kalender</Button>
-								<Link to={"../calendar"}></Link>
+								<Link to={"../calendar"}>
+									<Button variant={"primary"}>Öppna kalender</Button>
+								</Link>
 							</section>
 						</Accordion.Body>
 					</Accordion.Item>
@@ -70,7 +67,7 @@ function UserProfile() {
 								<header>Aktiviteter</header>
 								<div className={"d-flex flex-row flex-wrap gap-3"}>
 									{persona.activities.map((activity: any) => (
-										<FilePicker element={<Item item={activity} size={100} rounded={true}/>}/>
+										<FilePicker element={<Item item={activity} size={100} rounded={true}/>} size={100} rounded={true}/>
 									))}
 								</div>
 							</section>
@@ -88,42 +85,61 @@ function UserProfile() {
 						<Accordion.Header>Appinställningar</Accordion.Header>
 						<Accordion.Body className={"d-flex flex-column gap-3"}>
 							<Form>
-								<Form.Group className="mb-3">
-									<Form.Label>Färgschema</Form.Label>
-									<select className="form-select" value={sybil.group}>
-										<option value="default">Standard</option>
-										<option value="highcontrast">Hög kontrast</option>
-										<option value="lowcontrast">Låg kontrast</option>
-										<option value="colorblindness">Anpassat för färgblindhet</option>
-									</select>
-								</Form.Group>
-								<Form.Group className="mb-3">
-									<Form.Label>Textstorlek</Form.Label>
-									<Form.Range value={25}/>
-								</Form.Group>
-								<Form.Group className="mb-3">
-									<Form.Label>Ljudvolym</Form.Label>
-									<Form.Range value={50}/>
-								</Form.Group>
-								<Form.Group className="mb-3">
-									<Form.Label>Ljudkanaler</Form.Label>
-									<Form.Check type="radio" name="mono-stereo" label="Mono"/>
-									<Form.Check type="radio" name="mono-stereo" label="Stereo" defaultChecked/>
-								</Form.Group>
-								<Form.Group className="mb-3">
-									<Form.Label>Anpassningar</Form.Label>
-									<Form.Check type="switch" label="Röstuppläsning"/>
-									<Form.Check type="switch" label="Haptisk feedback"/>
-									<Form.Check type="switch" label="Specialeffekter"/>
-								</Form.Group>
-								<Form.Group className="mb-3">
-									<Form.Label>AR-inställningar</Form.Label>
-									<Form.Check type="checkbox" name="mono-stereo" label="Förstärkt AR"/>
-								</Form.Group>
+								<Row>
+									<Col xs={12} md={4}>
+										<Form.Group className="mb-3">
+											<Form.Label>Färgschema:</Form.Label>
+											<select className="form-select">
+												<option value="default">Standard</option>
+												<option value="highcontrast">Hög kontrast</option>
+												<option value="lowcontrast">Låg kontrast</option>
+												<option value="colorblindness">Anpassat för färgblindhet</option>
+											</select>
+										</Form.Group>
+									</Col>
+									<Col xs={12} md={5} lg={4}>
+										<Form.Group className="mb-3">
+											<Form.Label>AR-inställningar:</Form.Label>
+											<Form.Check type="checkbox" name="mono-stereo" label="Förstärkt AR"/>
+										</Form.Group>
+									</Col>
+									<Col>
+										<Form.Group className="mb-3">
+											<Form.Label>Textstorlek:</Form.Label>
+											<Form.Range value={25}/>
+										</Form.Group>
+									</Col>
+								</Row>
+								<Row>
+									<Col xs={12} md={4}>
+										<Form.Group className="mb-3">
+											<Form.Label>Ljudkanaler:</Form.Label>
+											<Form.Check type="radio" name="mono-stereo" label="Mono"/>
+											<Form.Check type="radio" name="mono-stereo" label="Stereo" defaultChecked/>
+										</Form.Group>
+									</Col>
+									<Col xs={12} md={5} lg={4}>
+										<Form.Group className="mb-3 ms-auto">
+											<Form.Label>Anpassningar:</Form.Label>
+											<Form.Check type="switch" label="Röstuppläsning"/>
+											<Form.Check type="switch" label="Haptisk feedback"/>
+											<Form.Check type="switch" label="Specialeffekter"/>
+										</Form.Group>
+									</Col>
+									<Col>
+										<Form.Group className="mb-3 ms-auto">
+											<Form.Label>Ljudvolym:</Form.Label>
+											<Form.Range value={50}/>
+										</Form.Group>
+									</Col>
+								</Row>
 							</Form>
 						</Accordion.Body>
 					</Accordion.Item>
 				</Accordion>
+				<div className={"my-3"}>
+					<ButtonRemoveParticipant/>
+				</div>
 			</Col>
 		</div>
 	);

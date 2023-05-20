@@ -1,24 +1,32 @@
 import React from 'react';
-import {Accordion, Col, Container, Stack} from 'react-bootstrap';
-import {Link} from "react-router-dom";
-import Baka from "assets/img/pictogram/activities/baka.png";
+import {Accordion, Button, Col, Container, Form, Row, Stack} from 'react-bootstrap';
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import Image from "react-bootstrap/Image";
-import {Calendar4Week} from 'react-bootstrap-icons';
-import {Camera} from 'react-bootstrap-icons';
 import QR from "assets/img/qr.png";
-import ParticipantList from "../components/ParticipantList";
+import FilePicker from "../components/FilePicker";
+import Activity, {diska} from '../components/Activity';
+import Item from "../components/Item";
+import Persona, {personas, sybil} from '../components/Persona';
+import ModalConfirmRemoveActivity from "../components/ModalConfirmRemoveActivity";
+import ButtonRemoveActivity from "../components/ButtonRemoveActivity";
+import SettingsActivity from "../components/SettingsActivity";
 
 function ActivityProfile() {
+	const navigate = useNavigate();
+	const {state} = useLocation();
+	const activity = state === undefined ? diska : state;
+
 	return (
 		<div className={"d-sm-flex flex-row gap-3"}>
 			<div className="order-1 p-2 my-3">
-				<Image src={Baka} className={"pictogram-profile"} roundedCircle/>
+				<FilePicker element={<Activity activity={activity} size={200} roundedCircle={true}/>} size={200}
+				            roundedCircle={true}/>
 			</div>
 			<Col className="order-2 d-flex flex-column gap-3 my-3 mx-3">
 				<div className={"d-flex flex-row justify-content-between align-items-end"}>
 					<div>
-						<h1 className={"display-2 lh-1"}>Baka</h1>
-						<h2 className={"display-6 fw-lighter lh-1"}>Stående aktivitet</h2>
+						<h1 className={"display-2 lh-1"}>{activity.name}</h1>
+						<h2 className={"display-6 fw-lighter lh-1"}>Aktivitet</h2>
 					</div>
 
 					<Stack direction="horizontal">
@@ -26,57 +34,72 @@ function ActivityProfile() {
 					</Stack>
 				</div>
 
-				<Accordion defaultActiveKey="0">
+				<Accordion defaultActiveKey={["0"]} alwaysOpen>
 					<Accordion.Item eventKey="0">
 						<Accordion.Header>Anteckningar</Accordion.Header>
 						<Accordion.Body className={"d-flex flex-column gap-3"}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-							minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-							aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-							pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-							culpa qui officia deserunt mollit anim id est laborum.
+							{activity.description}
 						</Accordion.Body>
 					</Accordion.Item>
 					<Accordion.Item eventKey="1">
-						<Accordion.Header>Datum och tid</Accordion.Header>
-						<Accordion.Body className={"d-flex flex-column gap-3"}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-							minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-							aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-							pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-							culpa qui officia deserunt mollit anim id est laborum.
-							<Link to={"../calendar"}>Öppna kalender</Link>
+						<Accordion.Header>Kalender</Accordion.Header>
+						<Accordion.Body className={"d-flex flex-column flex-wrap gap-4"}>
+							<section className={"d-flex flex-column flex-wrap gap-3"}>
+								<header>Kommande tillfällen:</header>
+								<div className={"d-flex flex-column flex-wrap gap-3"}>
+									{activity.calendar && activity.calendar.map((date: any) =>
+										<div className={"d-flex flex-row flex-wrap gap-3"}>
+											<Activity activity={activity} size={100} rounded={true}/>
+											<Stack>
+												<h5>{activity.name}</h5>
+												{date.getDate()} {date.toLocaleString('default', {month: 'long'})} {date.getFullYear()} kl {String(date.getHours()).padStart(2, '0')}:{String(date.getMinutes()).padStart(2, '0')}
+											</Stack>
+										</div>
+									)}
+								</div>
+							</section>
+							<section>
+								<Link to={"../calendar"}>
+									<Button variant={"primary"}>Öppna kalender</Button>
+								</Link>
+							</section>
 						</Accordion.Body>
 					</Accordion.Item>
 					<Accordion.Item eventKey="2">
-						<Accordion.Header>Kommande tillfällen</Accordion.Header>
-						<Accordion.Body className={"d-flex flex-column gap-3"}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-							minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-							aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-							pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-							culpa qui officia deserunt mollit anim id est laborum.
-							<Link to={"../calendar"}>Öppna kalender</Link>
+						<Accordion.Header>Föremål</Accordion.Header>
+						<Accordion.Body className={"d-flex flex-column flex-wrap gap-4"}>
+							<div className={"d-flex flex-row flex-wrap gap-3"}>
+								{activity.items.map((item: any) => <FilePicker
+									element={<Item item={item} size={100} rounded={true}/>} size={100}
+									rounded={true}/>)}
+							</div>
 						</Accordion.Body>
 					</Accordion.Item>
 					<Accordion.Item eventKey="3">
 						<Accordion.Header>Deltagare</Accordion.Header>
-						<Accordion.Body>
-							<ParticipantList/>
+						<Accordion.Body className={"d-flex flex-column flex-wrap gap-4"}>
+							<div className={"d-flex flex-row flex-wrap gap-3"}>
+								{activity.participants.map((index: any) =>
+									<>
+										<div onClick={() => navigate('../userprofile', {state: personas[index]})}
+										     style={{cursor: "pointer"}}>
+											<Persona persona={personas[index]} size={100} rounded={true}/>
+										</div>
+									</>
+								)}
+							</div>
+						</Accordion.Body>
+					</Accordion.Item>
+					<Accordion.Item eventKey="4">
+						<Accordion.Header>Inställningar</Accordion.Header>
+						<Accordion.Body className={"d-flex flex-column flex-wrap gap-4"}>
+							<SettingsActivity/>
 						</Accordion.Body>
 					</Accordion.Item>
 				</Accordion>
-
-				<Stack direction="horizontal" gap={5} className={"mx-3 my-4"}>
-					<Calendar4Week size={48}/>
-					<Camera size={48}/>
-				</Stack>
+				<div className={"my-3"}>
+					<ButtonRemoveActivity/>
+				</div>
 			</Col>
 		</div>
 	);

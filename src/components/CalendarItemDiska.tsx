@@ -6,8 +6,8 @@ import Diska from "../assets/img/pictogram/activities/diska.png";
 import React from "react";
 import {List, ListInlineItem} from "reactstrap";
 import {ListOl} from "react-bootstrap-icons";
-import SaveButton from "./SaveButton";
-import RemoveButton from 'components/RemoveButton';
+import ButtonSave from "./ButtonSave";
+import ButtonRemoveActivity from 'components/ButtonRemoveActivity';
 
 const popover = (
 	<Popover id="popover-basic">
@@ -30,8 +30,8 @@ const popover = (
 				</ListGroup.Item>
 			</ListGroup>
 			<div className={"d-flex flex-row justify-content-between"}>
-				<RemoveButton name={"Ta bort"}/>
-				<SaveButton name={"Spara"}/>
+				<ButtonRemoveActivity name={"Ta bort"}/>
+				<ButtonSave name={"Spara"}/>
 			</div>
 		</Popover.Body>
 	</Popover>

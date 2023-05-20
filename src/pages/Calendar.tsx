@@ -6,7 +6,7 @@ import {DndProvider} from 'react-dnd';
 import {HTML5Backend} from 'react-dnd-html5-backend';
 import {ButtonToolbar} from 'reactstrap';
 import ModalConfirmSave from "components/ModalConfirmSave";
-import SaveButton from "components/SaveButton";
+import ButtonSave from "components/ButtonSave";
 import CalendarWeekView from "../components/CalendarWeekView";
 
 function Calendar() {
@@ -25,7 +25,7 @@ function Calendar() {
 
 						<ButtonToolbar>
 							<ButtonGroup className="m-3">
-								<SaveButton/>
+								<ButtonSave/>
 							</ButtonGroup>
 						</ButtonToolbar>
 					</Col>
