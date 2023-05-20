@@ -18,6 +18,16 @@ import imgMjol from "../assets/img/pictogram/items/mjöl.png";
 import imgRecept from "../assets/img/pictogram/items/recept.png";
 import imgSlev from "../assets/img/pictogram/items/slev.png";
 import imgSkal from "../assets/img/pictogram/items/skål.png";
+import imgGarn from "../assets/img/pictogram/items/garn.png";
+import imgSynal from "../assets/img/pictogram/items/synål.png";
+import imgTradrulle from "../assets/img/pictogram/items/trådrulle.png";
+import imgStaffli from "../assets/img/pictogram/items/staffli.png";
+import imgPensel from "../assets/img/pictogram/items/pensel.png";
+import imgKritor from "../assets/img/pictogram/items/kritor.png";
+import imgVattenfarger from "../assets/img/pictogram/items/vattenfärger.png";
+import imgKaffe from "../assets/img/pictogram/items/kaffe.png";
+import imgTe from "../assets/img/pictogram/items/te.png";
+import imgBulle from "../assets/img/pictogram/items/bulle.png";
 
 export const diskborste = {name: "Diskborste", img: imgDiskborste}
 export const diskbank = {name: "Diskborste", img: imgDiskbank}
@@ -36,8 +46,18 @@ export const mjol = {name: "Mjöl", img: imgMjol}
 export const recept = {name: "Recept", img: imgRecept}
 export const slev = {name: "Slev", img: imgSlev}
 export const skal = {name: "Skål", img: imgSkal}
+export const garn = {name: "Garn", img: imgGarn}
+export const synal = {name: "Synål", img: imgSynal}
+export const tradrulle = {name: "Trådrulle", img: imgTradrulle}
+export const staffli = {name: "Staffli", img: imgStaffli}
+export const kritor = {name: "Kritor", img: imgKritor}
+export const vattenfarger = {name: "Vattenfärger", img: imgVattenfarger}
+export const pensel = {name: "Pensel", img: imgPensel}
+export const kaffe = {name: "Kaffe", img: imgKaffe}
+export const te = {name: "Te", img: imgTe}
+export const bulle = {name: "Bulle", img: imgBulle}
 
-export const items = [ diskborste, diskbank, diskmedel, tallrik, gympasko, kavel, bakplat, bakpulver, slickepott, bakform, elvisp, bullform, pepparkaksformar, mjol, recept, slev, skal ]
+export const items = [ diskborste, diskbank, diskmedel, tallrik, gympasko, kavel, bakplat, bakpulver, slickepott, bakform, elvisp, bullform, pepparkaksformar, mjol, recept, slev, skal, garn, synal, tradrulle, pensel, kritor, vattenfarger, staffli, kaffe, te, bulle ]
 
 function Item(props: any) {
 	const name = props.item.name

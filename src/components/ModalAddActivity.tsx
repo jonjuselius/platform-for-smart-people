@@ -34,7 +34,7 @@ function ModalAddActivity() {
 			<Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} size="lg">
 				<Modal.Header closeButton>
 					<Modal.Title>
-						<Form.Control type="text" placeholder={"Namn på aktiviteten"} autoFocus plaintext={true}/>
+						<Form.Control type="text" placeholder={"Aktivitetens namn"} autoFocus plaintext={true}/>
 					</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
