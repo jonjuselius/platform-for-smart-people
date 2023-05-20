@@ -6,10 +6,12 @@ import UserProfile from "pages/UserProfile";
 import Calendar from 'pages/Calendar';
 
 function Layout() {
-	return <>
-		<Navigation/>
-		<Outlet/>
-	</>
+	return (
+		<div className={"pb-5 mb-5"}>
+			<Navigation/>
+			<Outlet/>
+		</div>
+	)
 }
 
 export default Layout;

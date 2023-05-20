@@ -1,6 +1,6 @@
 import React from 'react';
-import {Accordion, Col, Container, Stack} from 'react-bootstrap';
-import {Link} from "react-router-dom";
+import {Accordion, Button, Col, Container, Form, Stack} from 'react-bootstrap';
+import {Link, useLocation} from "react-router-dom";
 import Anna from "assets/img/persona/anna.png";
 import Image from "react-bootstrap/Image";
 import {Calendar4Week} from 'react-bootstrap-icons';
@@ -8,18 +8,30 @@ import {Camera} from 'react-bootstrap-icons';
 import QR from "assets/img/qr.png";
 import ParticipantList from "../components/ParticipantList";
 import ActivitiesList from "../components/ActivitiesList";
+import Persona, {anna, personas, sybil} from '../components/Persona';
+import FilePicker from "../components/FilePicker";
+import Item, {diskborste, items} from "../components/Item";
+
+// import { useLocation } from 'react-router-dom';
 
 function UserProfile() {
+	// let location = useLocation();
+	// const {currentPersona} = location.state;
+	// const {persona} = props.location;
+	// const persona = anna;
+	const {state} = useLocation();
+	let persona = state === undefined ? anna : state;
+
 	return (
 		<div className={"d-sm-flex flex-row gap-3"}>
 			<div className="order-1 p-2 my-3">
-				<Image src={Anna} className={"persona-profile"} roundedCircle/>
+				<Image src={persona.img} alt={persona.name} className={"persona-profile"} roundedCircle/>
 			</div>
 			<Col className="order-2 d-flex flex-column gap-3 my-3 mx-3">
 				<div className={"d-flex flex-row justify-content-between align-items-end"}>
 					<div>
-						<h1 className={"display-2 lh-1"}>Anna</h1>
-						<h2 className={"display-6 fw-lighter lh-1"}>Grupp 2</h2>
+						<h1 className={"display-2 lh-1"}>{persona.name}</h1>
+						<h2 className={"display-6 fw-lighter lh-1"}>Grupp {persona.group}</h2>
 					</div>
 
 					<Stack direction="horizontal">
@@ -31,63 +43,87 @@ function UserProfile() {
 					<Accordion.Item eventKey="0">
 						<Accordion.Header>Anteckningar</Accordion.Header>
 						<Accordion.Body className={"d-flex flex-column gap-3"}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-							minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-							aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-							pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-							culpa qui officia deserunt mollit anim id est laborum.
-							<Link to={"../login"}>Kontaktuppgifter</Link>
+							{persona.description}
 						</Accordion.Body>
 					</Accordion.Item>
 					<Accordion.Item eventKey="1">
-						<Accordion.Header>Stående aktiviteter</Accordion.Header>
-						<Accordion.Body className={"d-flex flex-column gap-3"}>
-							<ActivitiesList/>
-							<Link to={"../calendar"}>Öppna kalender</Link>
-						</Accordion.Body>
-					</Accordion.Item>
-					<Accordion.Item eventKey="2">
-						<Accordion.Header>Kommande aktiviteter</Accordion.Header>
-						<Accordion.Body className={"d-flex flex-column gap-3"}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-							minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-							aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-							pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-							culpa qui officia deserunt mollit anim id est laborum.
-							<Link to={"../calendar"}>Öppna kalender</Link>
+						<Accordion.Header>Kalender</Accordion.Header>
+						<Accordion.Body className={"d-flex flex-column flex-wrap gap-4"}>
+							<section className={"d-flex flex-column flex-wrap gap-2"}>
+								<header>Idag</header>
+								<div className={"d-flex flex-row flex-wrap gap-3"}>
+									{persona.activities.map((activity: any) => (
+										<Item item={activity} size={100} rounded={true}/>
+									))}
+								</div>
+							</section>
+							<section className={"d-flex flex-column flex-wrap gap-2 align-items-start"}>
+								<Button variant={"primary"}>Öppna kalender</Button>
+								<Link to={"../calendar"}></Link>
+							</section>
 						</Accordion.Body>
 					</Accordion.Item>
 					<Accordion.Item eventKey="3">
-						<Accordion.Header>Bilder</Accordion.Header>
-						<Accordion.Body className={"d-flex flex-column gap-3"}>
-							Anna har ännu inga bilder sparade.
+						<Accordion.Header>Bildbank</Accordion.Header>
+						<Accordion.Body className={"d-flex flex-column flex-wrap gap-4"}>
+							<section className={"d-flex flex-column flex-wrap gap-2"}>
+								<header>Aktiviteter</header>
+								<div className={"d-flex flex-row flex-wrap gap-3"}>
+									{persona.activities.map((activity: any) => (
+										<FilePicker element={<Item item={activity} size={100} rounded={true}/>}/>
+									))}
+								</div>
+							</section>
+							<section className={"d-flex flex-column flex-wrap gap-2"}>
+								<header>Föremål</header>
+								<div className={"d-flex flex-row flex-wrap gap-3"}>
+									{persona.items.map((item: any) => (
+										<FilePicker element={<Item item={item} size={100} rounded={true}/>}/>
+									))}
+								</div>
+							</section>
 						</Accordion.Body>
 					</Accordion.Item>
 					<Accordion.Item eventKey="4">
 						<Accordion.Header>Appinställningar</Accordion.Header>
 						<Accordion.Body className={"d-flex flex-column gap-3"}>
-							<Link to={"../"}>Färgschema</Link>
-							<Link to={"../"}>Kontrast</Link>
-							<Link to={"../"}>Textstorlek</Link>
-							<Link to={"../"}>Haptisk feedback</Link>
-							<Link to={"../"}>Röstuppläsning</Link>
-							<Link to={"../"}>Ljudvolym</Link>
-							<Link to={"../"}>Mono-stereo</Link>
-							<Link to={"../"}>AR-inställningar</Link>
+							<Form>
+								<Form.Group className="mb-3">
+									<Form.Label>Färgschema</Form.Label>
+									<select className="form-select" value={sybil.group}>
+										<option value="default">Standard</option>
+										<option value="highcontrast">Hög kontrast</option>
+										<option value="lowcontrast">Låg kontrast</option>
+										<option value="colorblindness">Anpassat för färgblindhet</option>
+									</select>
+								</Form.Group>
+								<Form.Group className="mb-3">
+									<Form.Label>Textstorlek</Form.Label>
+									<Form.Range value={25}/>
+								</Form.Group>
+								<Form.Group className="mb-3">
+									<Form.Label>Ljudvolym</Form.Label>
+									<Form.Range value={50}/>
+								</Form.Group>
+								<Form.Group className="mb-3">
+									<Form.Label>Ljudkanaler</Form.Label>
+									<Form.Check type="radio" name="mono-stereo" label="Mono"/>
+									<Form.Check type="radio" name="mono-stereo" label="Stereo" defaultChecked/>
+								</Form.Group>
+								<Form.Group className="mb-3">
+									<Form.Label>Anpassningar</Form.Label>
+									<Form.Check type="switch" label="Röstuppläsning"/>
+									<Form.Check type="switch" label="Haptisk feedback"/>
+									<Form.Check type="switch" label="Specialeffekter"/>
+								</Form.Group>
+								<Form.Group className="mb-3">
+									<Form.Label>AR-inställningar</Form.Label>
+									<Form.Check type="checkbox" name="mono-stereo" label="Förstärkt AR"/>
+								</Form.Group>
+							</Form>
 						</Accordion.Body>
 					</Accordion.Item>
 				</Accordion>
-
-				<Stack direction="horizontal" gap={5} className={"mx-3 my-4"}>
-					<Link to={"../calendar"}>
-						<Calendar4Week size={48}/>
-					</Link>
-					<Camera size={48}/>
-				</Stack>
 			</Col>
 		</div>
 	);

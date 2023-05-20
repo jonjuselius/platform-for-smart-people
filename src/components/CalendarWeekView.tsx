@@ -4,8 +4,8 @@ import {Col, Container, Row, Image, Figure} from "react-bootstrap";
 import empty from 'assets/img/empty.png'
 import 'assets/calendar.scss'
 import {Link} from "react-router-dom";
-import Diska from 'assets/img/pictogram/diska.png'
-import Fika from 'assets/img/pictogram/fika.png'
+import Diska from 'assets/img/pictogram/activities/diska.png'
+import Fika from 'assets/img/pictogram/activities/fika.png'
 
 export default function CalendarWeekView() {
 	return (

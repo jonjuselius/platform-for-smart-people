@@ -3,7 +3,7 @@ import {Container, Nav, Navbar, Col, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 function Navigation() {
-	return <Navbar bg="primary" expand="lg" variant={"dark"}>
+	return <Navbar bg="primary" expand="md" variant={"dark"}>
 		<Container>
 			<Navbar.Brand as={Link} to="" className={"me-5"}>Platform for Smart People</Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav"/>

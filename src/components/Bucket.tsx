@@ -3,12 +3,12 @@ import {useDrop, XYCoord} from "react-dnd";
 import {Box} from "./Box";
 import {Image} from "react-bootstrap";
 import update from 'immutability-helper'
-import baka from 'assets/img/pictogram/baka.png'
-import diska from 'assets/img/pictogram/diska.png'
-import fika from 'assets/img/pictogram/fika.png'
-import måla from 'assets/img/pictogram/måla.png'
-import sticka from 'assets/img/pictogram/sticka.png'
-import yoga from 'assets/img/pictogram/yoga.png'
+import baka from 'assets/img/pictogram/activities/baka.png'
+import diska from 'assets/img/pictogram/activities/diska.png'
+import fika from 'assets/img/pictogram/activities/fika.png'
+import måla from 'assets/img/pictogram/activities/måla.png'
+import sticka from 'assets/img/pictogram/activities/sticka.png'
+import yoga from 'assets/img/pictogram/activities/yoga.png'
 
 const bucketStyle: CSSProperties = {
 	width: '100vw',

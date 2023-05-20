@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 import {Form, Image, ListGroup, Stack} from "react-bootstrap";
-import Diska from "../assets/img/pictogram/diska.png";
+import Diska from "../assets/img/pictogram/activities/diska.png";
 import React from "react";
 import {List, ListInlineItem} from "reactstrap";
 import {ListOl} from "react-bootstrap-icons";

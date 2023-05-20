@@ -1,7 +1,7 @@
 import React from 'react';
 import {Accordion, Col, Container, Stack} from 'react-bootstrap';
 import {Link} from "react-router-dom";
-import Baka from "assets/img/pictogram/baka.png";
+import Baka from "assets/img/pictogram/activities/baka.png";
 import Image from "react-bootstrap/Image";
 import {Calendar4Week} from 'react-bootstrap-icons';
 import {Camera} from 'react-bootstrap-icons';
