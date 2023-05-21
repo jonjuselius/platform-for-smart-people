@@ -7,6 +7,7 @@ import imgYoga from 'assets/img/pictogram/activities/yoga.png'
 import imgFika from 'assets/img/pictogram/activities/fika.png'
 import imgMåla from 'assets/img/pictogram/activities/måla.png'
 import imgSticka from 'assets/img/pictogram/activities/sticka.png'
+import imgEmpty from 'assets/img/empty.png'
 import {
 	bakform,
 	bakplat,
@@ -84,6 +85,14 @@ export const sticka = {
 	participants: [13, 14],
 	items: [garn, synal, tradrulle],
 	calendar: [new Date(2023, 5, 9, 9, 0)]
+}
+export const empty = {
+	name: '',
+	img: imgEmpty,
+	description: '',
+	participants: [],
+	items: [],
+	calendar: []
 }
 
 export const activities = [diska, baka, yoga, fika, mala, sticka]
