@@ -1,8 +1,6 @@
-import React from "react";
-import Persona, {anna, personas} from "./Persona";
-import Image from "react-bootstrap/Image";
-import Anna from "../assets/img/persona/anna.png";
-import {Link, useNavigate} from "react-router-dom";
+import React from 'react'
+import Persona, {personas} from './Persona'
+import {useNavigate} from 'react-router-dom'
 
 export default function ParticipantList() {
 	const navigate = useNavigate();

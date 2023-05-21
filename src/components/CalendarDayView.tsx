@@ -1,6 +1,5 @@
-import src from "assets/Pictogram.png";
-import React from "react";
-import {Col, Container, Row, Image} from "react-bootstrap";
+import React from 'react'
+import {Col, Container, Image, Row} from 'react-bootstrap'
 import empty from 'assets/img/empty.png'
 
 export default function CalendarDayView() {

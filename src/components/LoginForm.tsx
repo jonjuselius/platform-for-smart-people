@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Form, Button, Stack, InputGroup, FloatingLabel } from 'react-bootstrap';
+import React, {useState} from 'react'
+import {Button, FloatingLabel, Form} from 'react-bootstrap'
 
 const LoginForm: React.FC = () => {
     const [email, setEmail] = useState<string>('');

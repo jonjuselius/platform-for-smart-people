@@ -1,13 +1,11 @@
-import React from 'react';
-import CalendarDayView from "components/CalendarDayView";
-import {Button, ButtonGroup, Col, Container, Row} from 'react-bootstrap';
-import {Bucket} from 'components/Bucket';
-import {DndProvider} from 'react-dnd';
-import {HTML5Backend} from 'react-dnd-html5-backend';
-import {ButtonToolbar} from 'reactstrap';
-import ModalConfirmSave from "components/ModalConfirmSave";
-import ButtonSave from "components/ButtonSave";
-import CalendarWeekView from "../components/CalendarWeekView";
+import React from 'react'
+import CalendarDayView from 'components/CalendarDayView'
+import {ButtonGroup, Col, Row} from 'react-bootstrap'
+import {Bucket} from 'components/Bucket'
+import {DndProvider} from 'react-dnd'
+import {HTML5Backend} from 'react-dnd-html5-backend'
+import {ButtonToolbar} from 'reactstrap'
+import ButtonSave from 'components/ButtonSave'
 
 function Calendar() {
 	return (

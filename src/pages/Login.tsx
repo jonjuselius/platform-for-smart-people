@@ -1,6 +1,6 @@
-import React from 'react';
-import LoginForm from "components/LoginForm";
-import {Container, Row, Col} from 'react-bootstrap';
+import React from 'react'
+import LoginForm from 'components/LoginForm'
+import {Col, Container, Row} from 'react-bootstrap'
 
 function Login() {
 	return (

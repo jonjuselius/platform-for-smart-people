@@ -1,9 +1,8 @@
-import React from 'react';
-import Landing from "assets/img/landing.png";
-import Image from "react-bootstrap/Image";
-import {Button, Carousel, Container, Row} from 'react-bootstrap';
-import {Col} from 'reactstrap';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import Landing from 'assets/img/landing.png'
+import {Button, Carousel, Container, Row} from 'react-bootstrap'
+import {Col} from 'reactstrap'
+import {Link} from 'react-router-dom'
 
 function Home() {
 	return (

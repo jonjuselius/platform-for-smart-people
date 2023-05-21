@@ -1,6 +1,6 @@
-import CalendarMonthView from 'components/CalendarMonthView';
-import React from 'react';
-import {Container, Stack} from "react-bootstrap";
+import CalendarMonthView from 'components/CalendarMonthView'
+import React from 'react'
+import {Stack} from 'react-bootstrap'
 
 function CalendarMonth() {
 	return (

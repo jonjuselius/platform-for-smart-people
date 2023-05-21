@@ -1,10 +1,6 @@
-import src from "assets/Pictogram.png";
-import React from "react";
-import {Col, Container, Row, Image} from "react-bootstrap";
-import empty from 'assets/img/empty.png'
+import React from 'react'
 import 'assets/calendar.scss'
-import {Link} from "react-router-dom";
-import calendarDay from "../pages/CalendarDay";
+import {Link} from 'react-router-dom'
 
 export default function CalendarMonthView() {
 	return (

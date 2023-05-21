@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Alert} from "react-bootstrap";
+import React, {useState} from 'react'
+import {Alert} from 'react-bootstrap'
 
 export default function AlertSaveActivityConfirmation(props: any) {
 	const [show, setShow] = useState(props.show);

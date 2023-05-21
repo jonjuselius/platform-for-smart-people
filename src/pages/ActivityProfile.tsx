@@ -1,15 +1,14 @@
-import React from 'react';
-import {Accordion, Button, Col, Container, Form, Row, Stack} from 'react-bootstrap';
-import {Link, useLocation, useNavigate} from "react-router-dom";
-import Image from "react-bootstrap/Image";
-import QR from "assets/img/qr.png";
-import FilePicker from "../components/FilePicker";
-import Activity, {diska} from '../components/Activity';
-import Item from "../components/Item";
-import Persona, {personas, sybil} from '../components/Persona';
-import ModalConfirmRemoveActivity from "../components/ModalConfirmRemoveActivity";
-import ButtonRemoveActivity from "../components/ButtonRemoveActivity";
-import SettingsActivity from "../components/SettingsActivity";
+import React from 'react'
+import {Accordion, Button, Col, Stack} from 'react-bootstrap'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
+import Image from 'react-bootstrap/Image'
+import QR from 'assets/img/qr.png'
+import FilePicker from '../components/FilePicker'
+import Activity, {diska} from '../components/Activity'
+import Item from '../components/Item'
+import Persona, {personas} from '../components/Persona'
+import ButtonRemoveActivity from '../components/ButtonRemoveActivity'
+import SettingsActivity from '../components/SettingsActivity'
 
 function ActivityProfile() {
 	const navigate = useNavigate();
@@ -34,7 +33,7 @@ function ActivityProfile() {
 					</Stack>
 				</div>
 
-				<Accordion defaultActiveKey={["0"]} alwaysOpen>
+				<Accordion defaultActiveKey={[""]} alwaysOpen>
 					<Accordion.Item eventKey="0">
 						<Accordion.Header>Anteckningar</Accordion.Header>
 						<Accordion.Body className={"d-flex flex-column gap-3"}>

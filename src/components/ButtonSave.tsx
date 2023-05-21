@@ -1,6 +1,6 @@
-import ModalConfirmSave from "components/ModalConfirmSave";
-import React from "react";
-import {Button} from "react-bootstrap";
+import ModalConfirmSave from 'components/ModalConfirmSave'
+import React from 'react'
+import {Button} from 'react-bootstrap'
 
 export default function ButtonSave(props: any) {
 	const [modalShow, setModalShow] = React.useState(false);

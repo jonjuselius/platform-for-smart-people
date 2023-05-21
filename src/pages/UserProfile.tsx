@@ -1,17 +1,12 @@
-import React from 'react';
-import {Accordion, Button, Col, Container, Form, Row, Stack} from 'react-bootstrap';
-import {Link, useLocation} from "react-router-dom";
-import Anna from "assets/img/persona/anna.png";
-import Image from "react-bootstrap/Image";
-import {Calendar4Week} from 'react-bootstrap-icons';
-import {Camera} from 'react-bootstrap-icons';
-import QR from "assets/img/qr.png";
-import ParticipantList from "../components/ParticipantList";
-import ActivitiesList from "../components/ActivitiesList";
-import Persona, {anna, personas, sybil} from '../components/Persona';
-import FilePicker from "../components/FilePicker";
-import Item, {diskborste, items} from "../components/Item";
-import ButtonRemoveParticipant from "../components/ButtonRemoveParticipant";
+import React from 'react'
+import {Accordion, Button, Col, Form, Row, Stack} from 'react-bootstrap'
+import {Link, useLocation} from 'react-router-dom'
+import Image from 'react-bootstrap/Image'
+import QR from 'assets/img/qr.png'
+import Persona, {anna} from '../components/Persona'
+import FilePicker from '../components/FilePicker'
+import Item from '../components/Item'
+import ButtonRemoveParticipant from '../components/ButtonRemoveParticipant'
 
 function UserProfile() {
 	const {state} = useLocation();
@@ -35,7 +30,7 @@ function UserProfile() {
 					</Stack>
 				</div>
 
-				<Accordion defaultActiveKey={["0"]} alwaysOpen>
+				<Accordion defaultActiveKey={[""]} alwaysOpen>
 					<Accordion.Item eventKey="0">
 						<Accordion.Header>Anteckningar</Accordion.Header>
 						<Accordion.Body className={"d-flex flex-column gap-3"}>

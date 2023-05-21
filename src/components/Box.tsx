@@ -1,5 +1,5 @@
-import {CSSProperties, FC, ReactNode } from "react"
-import { useDrag } from "react-dnd"
+import {CSSProperties, FC, ReactNode} from 'react'
+import {useDrag} from 'react-dnd'
 
 const boxStyle: CSSProperties = {
 	position: 'absolute',

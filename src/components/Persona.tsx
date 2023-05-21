@@ -1,21 +1,21 @@
 import React, {useState} from 'react';
 import {Col, Container, Form, Image, Row} from 'react-bootstrap';
 
-import imgAnna from "../assets/img/persona/anna.png";
-import imgBob from "../assets/img/persona/bob.png";
-import imgCarol from "../assets/img/persona/carol.png";
-import imgDave from "../assets/img/persona/dave.png";
-import imgEmily from "../assets/img/persona/emily.png";
-import imgEvelina from "../assets/img/persona/evelina.png";
-import imgHeidi from "../assets/img/persona/heidi.png";
-import imgIvan from "../assets/img/persona/ivan.png";
-import imgJudy from "../assets/img/persona/judy.png";
-import imgMike from "../assets/img/persona/mike.png";
-import imgNadja from "../assets/img/persona/nadja.png";
-import imgOscar from "../assets/img/persona/oscar.png";
-import imgPat from "../assets/img/persona/pat.png";
-import imgRupert from "../assets/img/persona/rupert.png";
-import imgSybil from "../assets/img/persona/sybil.png";
+import imgAnna from "assets/img/persona/anna.png";
+import imgBob from "assets/img/persona/bob.png";
+import imgCarol from "assets/img/persona/carol.png";
+import imgDave from "assets/img/persona/dave.png";
+import imgEmily from "assets/img/persona/emily.png";
+import imgEvelina from "assets/img/persona/evelina.png";
+import imgHeidi from "assets/img/persona/heidi.png";
+import imgIvan from "assets/img/persona/ivan.png";
+import imgJudy from "assets/img/persona/judy.png";
+import imgMike from "assets/img/persona/mike.png";
+import imgNadja from "assets/img/persona/nadja.png";
+import imgOscar from "assets/img/persona/oscar.png";
+import imgPat from "assets/img/persona/pat.png";
+import imgRupert from "assets/img/persona/rupert.png";
+import imgSybil from "assets/img/persona/sybil.png";
 import {diskbank, diskborste, diskmedel, tallrik} from "./Item";
 import {diska, baka, yoga} from "./Activity";
 

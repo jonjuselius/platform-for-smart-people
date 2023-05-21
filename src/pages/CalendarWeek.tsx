@@ -1,6 +1,6 @@
-import CalendarWeekView from 'components/CalendarWeekView';
-import React from 'react';
-import {Container, Stack} from "react-bootstrap";
+import CalendarWeekView from 'components/CalendarWeekView'
+import React from 'react'
+import {Stack} from 'react-bootstrap'
 
 function CalendarWeek() {
 	return (

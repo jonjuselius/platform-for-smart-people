@@ -1,6 +1,6 @@
-import { useFilePicker } from "use-file-picker";
-import React from "react";
-import {Image} from "react-bootstrap";
+import {useFilePicker} from 'use-file-picker'
+import React from 'react'
+import {Image} from 'react-bootstrap'
 
 export default function FilePicker(props: any) {
 	const size = props.size

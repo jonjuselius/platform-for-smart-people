@@ -1,6 +1,6 @@
-import CalendarDayView2 from 'components/CalendarDayView2';
-import React from 'react';
-import {Container, Stack} from "react-bootstrap";
+import CalendarDayView2 from 'components/CalendarDayView2'
+import React from 'react'
+import {Stack} from 'react-bootstrap'
 
 function CalendarDay() {
 	return (

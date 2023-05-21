@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {Alert, Col, Container, Form, Row} from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Persona, {personas, sybil} from './Persona';
-import FilePicker from "./FilePicker";
-import Activity, {activities} from "./Activity";
-import AlertSaveParticipantConfirmation from "./AlertSaveParticipantConfirmation";
+import React, {useState} from 'react'
+import {Col, Form, Row} from 'react-bootstrap'
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+import Persona, {sybil} from './Persona'
+import FilePicker from './FilePicker'
+import {activities} from './Activity'
+import AlertSaveParticipantConfirmation from './AlertSaveParticipantConfirmation'
 
 function ModalAddParticipant() {
 	const [show, setShow] = useState(false);

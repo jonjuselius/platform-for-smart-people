@@ -1,6 +1,6 @@
-import React from 'react';
-import {Container, Nav, Navbar, Col, Row} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import React from 'react'
+import {Container, Nav, Navbar} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 function Navigation() {
 	return <Navbar bg="primary" expand="md" variant={"dark"}>

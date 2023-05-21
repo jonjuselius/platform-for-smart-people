@@ -1,13 +1,13 @@
-import React, {createContext, useState} from 'react';
-import {Alert, Col, Container, FloatingLabel, Form, Row} from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Persona, {personas, sybil} from './Persona';
-import FilePicker from "./FilePicker";
-import Activity, {diska} from '../components/Activity';
-import SettingsActivity from "./SettingsActivity";
-import AlertSaveActivityConfirmation from "./AlertSaveActivityConfirmation";
-import {useNavigate} from "react-router-dom";
+import React, {useState} from 'react'
+import {Form} from 'react-bootstrap'
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+import {personas} from './Persona'
+import FilePicker from './FilePicker'
+import Activity, {diska} from '../components/Activity'
+import SettingsActivity from './SettingsActivity'
+import AlertSaveActivityConfirmation from './AlertSaveActivityConfirmation'
+import {useNavigate} from 'react-router-dom'
 
 function ModalAddActivity() {
 	const navigate = useNavigate();
